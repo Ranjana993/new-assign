@@ -55,13 +55,13 @@ exports.loginUser = async (req, res) => {
       user: {
         id: user.id,
         username: user.username,
-        email: user.email, // Ensure email is included
+        email: user.email, 
         dob: user.dob
       }
       , message: "ok"
     });
   } catch (error) {
-    console.error("Login error:", error); // Log error for debugging
-    res.status(500).json({ msg: 'Server error', error: error.message }); // Send error response
+    console.error("Login error:", error);
+    res.status(500).json({ msg: 'Server error', error: error.message }); 
   }
 };

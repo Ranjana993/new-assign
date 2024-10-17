@@ -26,7 +26,6 @@ function Registration({ setUser }) {
       });
 
       const result = await response.json(); 
-      // console.log("response ----- ", result);
 
       if (result.message === "ok" || result.message === "User already exists") {
         localStorage.setItem("user", JSON.stringify(result.user));
@@ -38,7 +37,7 @@ function Registration({ setUser }) {
       }
     } catch (error) {
       console.error("Error during registration:", error);
-      setErrorMessage("Server error. Please try again later."); // Handle server error
+      setErrorMessage("Server error. Please try again later."); 
     }
   };
 
@@ -59,10 +58,6 @@ function Registration({ setUser }) {
             <div className="border-t border-gray-300 w-full mx-4"></div>
           </div>
         </h1>
-
-        {errorMessage && ( // Display error message if exists
-          <div className="text-red-500 text-center mb-4">{errorMessage}</div>
-        )}
 
         <form onSubmit={handleSubmit}>
           <div className="mt-2">

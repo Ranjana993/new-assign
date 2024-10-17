@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = ({ onLoginSuccess }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate(); 
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,7 +40,7 @@ const Login = ({ onLoginSuccess }) => {
   return (
     <div className="w-[80%] flex justify-center items-center relative h-[80%] ">
       <button className="absolute -top-0 w-56 px-4 py-2 mb-4 text-white bg-cyan-500 rounded-md shadow-md">
-        SIGN UP
+        <Link to={"/register"}>SIGN UP </Link>
       </button>
       <div className="w-1/2 p-6 shadow-lg bg-white rounded-md">
         <h1 className="flex items-center justify-center py-6 font-semibold mt-12">
